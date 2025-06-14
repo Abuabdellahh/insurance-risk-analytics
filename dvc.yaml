@@ -1,0 +1,14 @@
+stages:
+  data-preparation:
+    cmd: python src/data_processing.py
+    deps:
+      - data/raw/
+    outs:
+      - data/processed/
+  exploratory-analysis:
+    cmd: jupyter nbconvert --execute notebooks/01_exploratory_analysis.ipynb
+    deps:
+      - data/processed/
+      - notebooks/01_exploratory_analysis.ipynb
+    outs:
+      - reports/exploratory_analysis.html
