@@ -10,28 +10,15 @@ from sklearn.impute import SimpleImputer, KNNImputer
 warnings.filterwarnings('ignore')
 
 class DataProcessor:
-    """Advanced data processing cl# Initialize the processor
-    processor = DataProcessor()
+    """Advanced data processing class for insurance analytics.
     
-    # Load data
-    df = processor.load_data('data/insurance_data.csv')
-    
-    # Get data overview
-    overview = processor.get_data_overview()
-    
-    # Clean data
-    cleaned_df = processor.clean_data(
-        remove_duplicates=True,
-        handle_missing='auto',
-        outlier_method='iqr',
-        outlier_threshold=1.5
-    )
-    
-    # Create features
-    feature_df = processor.create_insurance_features()
-    
-    # Encode categorical variables
-    encoded_df = processor.encode_categorical_features(method='onehot')ass for insurance analytics."""
+    This class provides comprehensive methods for handling insurance data including:
+    - Data loading from various formats
+    - Data cleaning and preprocessing
+    - Feature engineering for insurance metrics
+    - Categorical encoding
+    - Data type optimization
+    """
     
     def __init__(self, config: Optional[Dict] = None):
         self.config = config or {}
