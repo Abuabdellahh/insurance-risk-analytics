@@ -1,0 +1,31 @@
+project:
+  name: "Insurance Risk Analytics"
+  version: "1.0.0"
+  description: "End-to-end insurance risk analytics and predictive modeling"
+
+paths:
+  data_dir: "data"
+  notebooks_dir: "notebooks"
+  reports_dir: "reports"
+  models_dir: "models"
+
+processing:
+  encoding:
+    categorical_strategy: "onehot"
+    numerical_strategy: "standard"
+  imputation:
+    numerical_strategy: "knn"
+    categorical_strategy: "most_frequent"
+  outlier_detection:
+    method: "iqr"
+    threshold: 1.5
+
+modeling:
+  target_variable: "claim_amount"
+  test_size: 0.2
+  random_state: 42
+  cross_val_folds: 5
+
+dvc:
+  remote: "localstorage"
+  storage_path: "dvc-storage"
